@@ -352,7 +352,7 @@ var inadF="todos";
 var gridFonte="nextfit",gridArquivo="todos",gridPage=1,gridSearch="",
     gridSort={col:null,asc:true},gridPageSize=50,gridSearchTimer=null;
 var _gridCols=[];
-var menuGroups={analises:false,gestao:false,alunos:false,dados:false,sistema:false};
+var VERSION="v1.0 · 12/05/2026";
 
 // ═══════════════════════════════════════════════════════════════════════════
 // UTILITÁRIOS
@@ -517,7 +517,7 @@ function renderLogin(){
         el("p",{style:"font-size:13px;color:#4a4030;line-height:1.8;font-style:italic;max-width:300px;"},
           "Desde 2019 transformando vidas através do esporte. Mais de 2.000 alunos impactados."),
         el("div",{style:"margin-top:28px;display:flex;justify-content:center;gap:24px;"},
-          [["3","FONTES"],["861","COBRANÇAS"],["4.608","CHECK-INS"]].map(function(pair){
+          [["3","FONTES"],["360°","RETENÇÃO"],["100%","DIGITAL"]].map(function(pair){
             return el("div",{style:"text-align:center;"},[
               el("div",{style:"font-size:20px;font-weight:900;color:"+GOLD+";"},pair[0]),
               el("div",{style:"font-size:9px;color:#3a3020;letter-spacing:1px;"},pair[1])
@@ -533,17 +533,17 @@ function renderLogin(){
         el("p",{style:"font-size:12px;color:"+ter+";margin-bottom:28px;"},"Sistema de Gestão · RB Champs · Santo Amaro SP"),
         el("div",{style:"margin-bottom:14px;"},[
           el("label",{style:"color:"+ter+";font-size:10px;letter-spacing:2px;display:block;margin-bottom:6px;"},"E-MAIL"),
-          el("input",{id:"em",type:"email",value:"flavio.camargo@leega.com.br",
+          el("input",{id:"em",type:"email",autocomplete:"off",
             style:"width:100%;background:"+faint+";border:0.5px solid "+brd+";border-radius:8px;padding:12px 14px;color:"+txt+";font-size:13px;outline:none;"},"")
         ]),
         el("div",{style:"margin-bottom:26px;"},[
           el("label",{style:"color:"+ter+";font-size:10px;letter-spacing:2px;display:block;margin-bottom:6px;"},"SENHA"),
-          el("input",{id:"pw",type:"password",value:"123456",
+          el("input",{id:"pw",type:"password",autocomplete:"off",
             style:"width:100%;background:"+faint+";border:0.5px solid "+brd+";border-radius:8px;padding:12px 14px;color:"+txt+";font-size:13px;outline:none;"},"")
         ]),
         el("div",{id:"lerr",style:"display:none;background:#2d1111;border:0.5px solid #EF444455;border-radius:8px;padding:10px 14px;color:#EF4444;font-size:12px;margin-bottom:16px;"},""),
         el("button",{"data-action":"login",style:"width:100%;background:"+G+";border:none;border-radius:8px;padding:14px;color:#0a0900;font-size:13px;font-weight:900;cursor:pointer;letter-spacing:1.5px;"},"ENTRAR"),
-        el("p",{style:"text-align:center;margin-top:16px;font-size:10px;color:"+ter+";"},"flavio.camargo@leega.com.br  ·  123456")
+        el("p",{style:"text-align:center;margin-top:16px;font-size:10px;color:"+ter+";"},VERSION)
       ])
     ])
   ]);
@@ -681,7 +681,8 @@ function renderMain(){
         ]),
         el("button",{"data-action":"logout",style:"width:100%;display:flex;align-items:center;gap:7px;padding:7px 10px;border:none;border-radius:7px;background:transparent;color:"+mut+";font-size:11px;cursor:pointer;"},[
           el("i",{"class":"ti ti-logout","style":"font-size:13px;","aria-hidden":"true"},""),"Sair"
-        ])
+        ]),
+        el("div",{style:"text-align:center;padding:6px 0 2px;font-size:9px;color:"+ter+";letter-spacing:0.5px;"},VERSION)
       ])
     ]),
     el("div",{style:"flex:1;overflow-y:auto;background:"+bg+";min-width:0;"},
